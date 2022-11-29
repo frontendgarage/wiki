@@ -111,7 +111,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Kemil Beltre. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Kemil Beltre. All Rights Reserved.`,
       },
       docs: {
         sidebar: {
