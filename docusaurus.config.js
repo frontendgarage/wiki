@@ -10,8 +10,7 @@ const config = {
   tagline: 'Learn the foundation of Software Engineering - Algorithms, OOP, design patterns and more!',
   url: 'https://frontendgarage.io',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: 'ignore',
   favicon: 'img/favicon.ico',
 
   // GitHub pages deployment config.
@@ -29,22 +28,21 @@ const config = {
 
   presets: [
     [
-      'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
+      '@docusaurus/preset-classic',
       ({
         docs: {
+          path: './contents',
+          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/frontendgarage/website/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/frontendgarage/website/contents/',
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/frontendgarage/website/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/frontendgarage/website/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -64,10 +62,7 @@ const config = {
         },
         items: [
           {
-            type: 'doc',
-            docId: 'intro',
-            position: 'left',
-            label: 'Core',
+            to: 'introduction', label: 'Core', position: 'left'
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
@@ -117,6 +112,11 @@ const config = {
           },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} Kemil Beltre. Built with Docusaurus.`,
+      },
+      docs: {
+        sidebar: {
+          hideable: true,
+        },
       },
       prism: {
         theme: lightCodeTheme,
