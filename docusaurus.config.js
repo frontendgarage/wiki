@@ -35,14 +35,14 @@ const config = {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
-            'https://github.com/frontendgarage/website/contents/',
+            'https://github.com/frontendgarage/website/tree/main/',
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
         },
         blog: {
           showReadingTime: true,
           editUrl:
-            'https://github.com/frontendgarage/website/blog/',
+            'https://github.com/frontendgarage/website/tree/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
