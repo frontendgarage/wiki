@@ -3,10 +3,8 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
-
-import styles from './index.module.css';
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import styles from './index.module.css';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
@@ -49,7 +47,7 @@ function FeaturesSection() {
                                 <p>
                                     Learn Data Structures form zero to hero with great examples.
                                 </p>
-                                <a href={useBaseUrl('docs/category/data-structures')}>
+                                <a href={useBaseUrl('data-structures')}>
                                     <strong>Learn more</strong>
                                 </a>
                             </div>
@@ -58,7 +56,7 @@ function FeaturesSection() {
                                 <p>
                                     Algorithms is an essential topic that every Software Engineer should master.
                                 </p>
-                                <a href={useBaseUrl('docs/category/algorithms')}>
+                                <a href={useBaseUrl('algorithms')}>
                                     <strong>Learn more</strong>
                                 </a>
                             </div>
