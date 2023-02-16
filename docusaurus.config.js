@@ -11,7 +11,7 @@ const config = {
   url: 'https://frontendgarage.io',
   baseUrl: '/',
   onBrokenLinks: 'ignore',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/logo.png',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
