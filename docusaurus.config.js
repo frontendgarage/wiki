@@ -66,7 +66,7 @@ const config = {
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/frontendgarage/website',
+            href: 'https://github.com/frontendgarage',
             label: 'GitHub',
             position: 'right',
           },
@@ -80,7 +80,7 @@ const config = {
             items: [
               {
                 label: 'Get started',
-                to: '/docs/intro'
+                to: '/introduction'
               },
               {
                 label: 'Blog',
@@ -93,17 +93,21 @@ const config = {
             items: [
               {
                 label: 'Data Structures',
-                to: 'docs/category/data-structures'
+                to: '/data-structures'
               },
               {
                 label: 'Algorithms',
-                to: 'docs/category/algorithms'
+                to: '/algorithms'
               }
             ],
           },
           {
             title: 'More',
             items: [
+              {
+                label: 'GitHub',
+                href: 'https://github.com/frontendgarage',
+              },
               {
                 label: 'Twitter',
                 href: 'https://twitter.com/frontendgarage',
