@@ -3,13 +3,13 @@ module.exports = {
     'introduction',
     {
       type: 'category',
-      label: 'Data Structures',
-      items: ['data-structures'],
+      label: 'Algorithms',
+      items: ['algorithms'],
     },
     {
       type: 'category',
-      label: 'Algorithms',
-      items: ['algorithms'],
+      label: 'Data Structures',
+      items: ['data-structures'],
     },
   ],
 };

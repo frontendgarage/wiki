@@ -1,6 +1,7 @@
 import React from 'react';
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import clsx from "clsx";
+import Translate from '@docusaurus/Translate';
 
 export default function HomepageFeatures() {
   return (
@@ -14,32 +15,32 @@ export default function HomepageFeatures() {
                                 'text--center',
                                 'margin-bottom--xl',
                             )}>
-                            Why Frontend Garage?
+                            <Translate id="homePageFeatures.heading" >Why Frontend Garage?</Translate>
                         </h2>
                         <div className={clsx('row')}>
                             <div className={clsx('col', 'col--4')}>
-                                <h3>💾 Data Structures</h3>
+                                <h3><Translate id="homePageFeatures.title.ds">💾 Data Structures</Translate></h3>
                                 <p>
-                                    Learn Data Structures form zero to hero with great examples.
+                                   <Translate id="homePageFeatures.description.ds">Learn Data Structures form zero to hero with great examples.</Translate>
                                 </p>
                                 <a href={useBaseUrl('data-structures')}>
-                                    <strong>Learn more</strong>
+                                    <strong><Translate>Learn more</Translate></strong>
                                 </a>
                             </div>
                             <div className={clsx('col', 'col--4')}>
-                                <h3>🧠 Algorithms</h3>
+                                <h3><Translate id="homePageFeatures.title.algorithms">🧠 Algorithms</Translate></h3>
                                 <p>
-                                    Algorithms is an essential topic that every Software Engineer should master.
+                                    <Translate id="homePageFeatures.description.algorithms">Algorithms is an essential topic that every Software Engineer should master.</Translate>
                                 </p>
                                 <a href={useBaseUrl('algorithms')}>
-                                    <strong>Learn more</strong>
+                                    <strong><Translate>Learn more</Translate></strong>
                                 </a>
                             </div>
                             <div className={clsx('col', 'col--4')}>
-                                <h3>💯 From zero to hero</h3>
+                                <h3><Translate id="homePageFeatures.title.features">💯 From zero to hero</Translate></h3>
                                 <p>
-                                    Go from zero to hero with Frontend Garage.
-                                    Learn the core of Software Development!
+                                    <Translate id="homePageFeatures.description.features">Go from zero to hero with Frontend Garage.
+                                        Learn the core of Software Development!</Translate>
                                 </p>
                             </div>
                         </div>
