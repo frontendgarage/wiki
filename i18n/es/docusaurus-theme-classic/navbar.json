@@ -1,0 +1,10 @@
+{
+  "item.label.Start reading": {
+    "message": "Empieza a leer",
+    "description": "Elemento del Navbar con la introducción"
+  },
+  "item.label.Core": {
+    "message": "Fundamental",
+    "description": "Elemento del Navbar con lo fundamental"
+  }
+}
