@@ -1,0 +1,36 @@
+{
+  "homepageHeader.intro.linkLabel": {
+    "message": "Comienza a leer",
+    "description": "Etiqueta para link de la introducción"
+  },
+"homepageHeader.tagline":{
+  "message": "Aprende los fundamentos de la Ingeniería de Software - Algoritmos, POO, Patrones de diseño y ¡mucho más!"
+},
+  "It's completely free!": {
+    "message": "¡Es completamente gratis!"
+  },
+  "homePageFeatures.heading": {
+    "message": "¿Porqué Frontend Garage?"
+  },
+  "Learn more": {
+    "message": "Aprende más"
+  },
+  "homePageFeatures.title.ds": {
+    "message": "Estructuras de Datos"
+  },
+  "homePageFeatures.description.ds": {
+    "message": "Aprende Estructuras de Datos desde cero a héroe con buenos ejemplos."
+  },
+  "homePageFeatures.title.algorithms": {
+    "message": "Algoritmos"
+  },
+  "homePageFeatures.description.algorithms": {
+    "message": "Los Algoritmos son un tema esencial que todo Desarrollador de Software debería dominar."
+  },
+  "homePageFeatures.title.features": {
+    "message": "De cero a heroe"
+  },
+  "homePageFeatures.description.features": {
+    "message": "Ve de cero a héroe con Frontend Garage. ¡Aprende los fundamentos del Desarrollo de Software!"
+  }
+}

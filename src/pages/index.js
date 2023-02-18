@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
+import Translate from '@docusaurus/Translate';
 import HomepageFeatures from "../components/HomepageFeatures";
 import styles from './index.module.css';
 
@@ -12,16 +13,22 @@ function HomepageHeader() {
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className={clsx('container col col--8 col--offset-2')}>
         <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <p className="hero__subtitle"><Translate id="homepageHeader.tagline" >{siteConfig.tagline}</Translate></p>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
             to="/introduction">
-              Start reading
+              <Translate
+                  id="homepageHeader.intro.linkLabel"
+                  description="The label for the link to introduction">
+                  Start reading
+              </Translate>
           </Link>
         </div>
           <p className="margin-top--md">
-              <em>It's completely free!</em>
+              <em>
+                  <Translate>It's completely free!</Translate>
+              </em>
           </p>
       </div>
     </header>

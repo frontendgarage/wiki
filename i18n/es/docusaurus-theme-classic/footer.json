@@ -1,0 +1,22 @@
+{
+  "link.item.label.Get started": {
+    "message": "Empieza",
+    "description": "Elemento del Footer con la introducción"
+  },
+  "link.title.Core": {
+        "message": "Fundamental",
+        "description": "Titulo de los elementos nucleo"
+  },
+  "link.item.label.Algorithms": {
+    "message": "Algoritmos",
+    "description": "Enlace a algoritmos"
+  },
+  "link.item.label.Data Structures": {
+    "message": "Estructuras de Datos",
+    "description": "Enlace a Estructuras de Datos"
+  },
+  "link.title.More": {
+        "message": "Más",
+        "description": "Titulo de los enlaces"
+    }
+}
