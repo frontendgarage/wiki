@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Frontend Garage',
   tagline: 'Learn the foundation of Software Engineering - Algorithms, OOP, design patterns and more!',
-  url: 'https://frontendgarage.io',
+  url: 'https://www.frontendgarage.io',
   baseUrl: '/',
   onBrokenLinks: 'ignore',
   favicon: 'img/logo.png',
@@ -60,6 +60,11 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      algolia: {
+        appId: 'HDQJ0QCZIM',
+        apiKey: 'd7f3f55fb20f2cbd012e494cfa6cf244',
+        indexName: 'frontendgarage',
+      },
       navbar: {
         title: 'Frontend Garage',
         logo: {
