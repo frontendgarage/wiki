@@ -62,8 +62,8 @@ const config = {
     ({
       algolia: {
         appId: 'HDQJ0QCZIM',
-        apiKey: 'd7f3f55fb20f2cbd012e494cfa6cf244',
-        indexName: 'frontendgarage',
+        apiKey: 'cfe8b2ed5d3738b3aebfc8f3d462b809',
+        indexName: 'frontend_garage',
       },
       navbar: {
         title: 'Frontend Garage',
