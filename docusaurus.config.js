@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Frontend Garage',
   tagline: 'Learn the foundation of Software Engineering - Algorithms, OOP, design patterns and more!',
-  url: 'https://www.frontendgarage.io',
+  url: 'https://www.frontendgarage.dev',
   baseUrl: '/',
   onBrokenLinks: 'ignore',
   favicon: 'img/logo.png',
