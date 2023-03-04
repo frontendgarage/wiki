@@ -1,0 +1,14 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Algoritmos": {
+    "message": "Algoritmos",
+    "description": "The label for category Algoritmos in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Estructuras de Datos": {
+    "message": "Estructuras de Datos",
+    "description": "The label for category Estructuras de Datos in sidebar tutorialSidebar"
+  }
+}
