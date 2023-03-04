@@ -1,10 +1,18 @@
 {
   "item.label.Start reading": {
     "message": "Empieza a leer",
-    "description": "Elemento del Navbar con la introducción"
+    "description": "Navbar item with label Start reading"
   },
   "item.label.Core": {
     "message": "Fundamental",
-    "description": "Elemento del Navbar con lo fundamental"
+    "description": "Navbar item with label Core"
+  },
+  "title": {
+    "message": "Frontend Garage",
+    "description": "The title in the navbar"
+  },
+  "item.label.Blog": {
+    "message": "Blog",
+    "description": "Navbar item with label Blog"
   }
 }
