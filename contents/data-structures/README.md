@@ -13,7 +13,7 @@ The choice of a good data structures will allow the algorithm to manipulate the 
 
 Data structures and algorithms are essential for becoming a skilled programmer since they considerably improve one’s problem-solving capabilities.
 
-## What is Data Structure, and Why do I Need to Learn It?
+## What are Data Structure, and Why do I Need to Learn It?
 
 Data Structures are nothing but “meaningful” arrangements of data that algorithms can use to solve any particular problem!
 
