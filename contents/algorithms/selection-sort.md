@@ -8,27 +8,27 @@ sidebar_position: 1
 
 ## Analogy
 
-[Drum Jazz kit]
+![Drum Jazz kit](../../static/img/drums.webp)
 
 Suppose you have a bunch of songs on your computer.
 
 For each artist, you have a number of plays.
 
-[Songs un-sorted]
+![Songs un-sorted](../../static/img/unsorted-songs.webp)
 
 You want to sort this list from most to least played, so that you can rank your favourite artists. How can you do it?
 
 One way is go through the list and find the most played artist. Add that artist to a new list.
 
-[Left side: un-sorted list. Right side: sorted list with one song (most played artist).]
+![Left side: un-sorted list. Right side: sorted list with one song (most played artist).](../../static/img/unsorted-songs2.webp)
 
 Do it again to find the next most played artist.
 
-[Left side: un-sorted list. Right side: sorted list with two songs (most played artists).]
+![Left side: un-sorted list. Right side: sorted list with two songs (most played artists).](../../static/img/unsorted-songs3.webp)
 
 Keep doing this, and you’ll end up with a sorted list.
 
-[Left side: un-sorted list. Right side: sorted list.]
+![Left side: un-sorted list. Right side: sorted list.](../../static/img/unsorted-songs4.webp)
 
 ## Time complexity
 
@@ -41,7 +41,7 @@ This tikes O(n x n) time or O(n^2) time.
 
 Sort an array from smallest to largest.
 
-[Selection sort animation.]
+![Selection sort animation.](../../static/img/Selection-Sort-Animation.gif)
 
 ## Summary
 

@@ -8,9 +8,13 @@ A veces necesitas almacenar una lista de elementos en memoria. Supongamos que es
 
 ¿Deberías usar un array, o una lista enlazada? Vamos a almacenar los gastos en una matriz en primer lugar, porque es más fácil de entender. Utilizar una matriz significa que todos los gastos se almacenan de forma contigua (uno al lado del otro) en la memoria.
 
-Supongamos que quiere añadir un cuarto gasto. Pero el siguiente cajón está ocupado.
+Ahora supongamos que quiere añadir un cuarto gasto. Pero el siguiente cajón está ocupado.
+
+![ejemplo 1: array de gastos](../../../../../static/img/array-expenses.webp)
 
 Es como salir con tus amigos y encontrar un sitio para sentarte, pero se te une otro amigo y no hay sitio para él. Tenéis que cambiaros a un nuevo sitio donde quepáis todos. En este caso tienes que pedir a tu ordenador un trozo diferente de memoria en el que quepan cuatro gastos. Entonces necesitas mover todos tus gastos allí.
+
+![ejemplo 2: array de gastos](../../../../../static/img/array-expenses-2.webp)
 
 Y esto se convertirá en un bucle tan pronto como más amigos se unan a ti, pero asegúrate de que siempre puedes añadir ranuras adicionales por si acaso. Esta es una buena solución, pero debes tener en cuenta un par de inconvenientes:
 
@@ -32,7 +36,7 @@ Con una lista enlazada, los elementos pueden estar en cualquier lugar de la memo
 
 ## Array vs LinkedList
 
-[Array vs Linkedlist]
+![Array vs Linkedlist](../../../../../static/img/array-linkedlist.webp)
 
 En un array conocemos la dirección de cada elemento del array. Como podemos ver en la imagen anterior tenemos un array con 5 unidades de memoria y este array contiene 3 elementos, como los elementos están almacenados en posiciones de memoria contiguas (los elementos de un array están numerados y esta numeración empieza por 0) sabemos donde empieza y donde acaba.
 
@@ -84,7 +88,9 @@ Y si no hay espacio, ¡puede que tengas que copiarlo todo a una nueva ubicación
 
 ¿Qué pasa si quieres borrar un elemento? De nuevo, las listas enlazadas son mejores, porque sólo necesitas cambiar a qué apunta el elemento anterior. Con arrays todo necesita ser movido hacia arriba cuando borras un elemento.
 
-Tiempos de ejecución de operaciones comunes con arrays y listas:
+### Tiempos de ejecución de operaciones comunes con arrays y listas:
+
+![Operaciones comunes](../../../../../static/img/deletions.webp)
 Tiempos de ejecución de operaciones comunes
 Las inserciones y eliminaciones son O(1) porque normalmente se rastrean el primer y el último elemento de una lista enlazada, por lo que sólo se tarda O(1) en añadir o eliminar.
 

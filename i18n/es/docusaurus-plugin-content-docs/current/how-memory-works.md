@@ -6,15 +6,15 @@ sidebar_position: 3
 
 Imagine que va a una exposición y necesita guardar sus cosas. Hay una cómoda disponible.
 
-[Una cajonera]
+![Una cajonera](../../../../static/img/drawers.webp)
 
 En cada cajón cabe un elemento. Si quieres guardar dos cosas, pides dos cajones.
 
-[Dos cajones individuales]
+![Dos cajones individuales](../../../../static/img/pair-drawers.webp)
 
 ¡Y ya estás listo para el espectáculo! Así es como funciona básicamente la memoria de tu ordenador. Tu ordenador parece un conjunto gigante de cajones, y cada cajón tiene una dirección.
 
-[Representación del chip de memoria]
+![Representación del chip de memoria](../../../../static/img/memory-chip.webp)
 
 Un chip de memoria es un circuito muy simple que se compone de un número muy grande típicamente muy grande de ciertas unidades que vamos a llamar "unidades direccionables"
 
