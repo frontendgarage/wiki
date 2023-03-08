@@ -63,6 +63,7 @@ const config = {
         appId: "7RCQQY6CI7",
         apiKey: "bc529d44e2ae879dc3e371587f5c7169",
         indexName: "frontend_garage",
+        contextualSearch: true,
       },
       navbar: {
         title: "Frontend Garage",
