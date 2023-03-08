@@ -6,15 +6,15 @@ sidebar_position: 3
 
 Imagine you go to a show and need to check your things. A chest of drawers is available.
 
-[A set of drawers]
+![A set of drawers](../static/img/drawers.webp)
 
 Each drawer can hold one element. You want to store two things, so you ask for two drawer.
 
-[Two single drawers]
+![Two single drawers](../static/img/pair-drawers.webp)
 
 And you’re ready for the show! This is basically how your computer’s memory works. Your computer looks like a giant set of drawers, and each drawer has an address.
 
-[Memory chip representation]
+![Memory chip representation](../static/img/memory-chip.webp)
 
 A memory chip is a very simple circuit it is comprised of a very large typically very large number of certain units which we’re going to call “addressable units”
 

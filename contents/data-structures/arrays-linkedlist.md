@@ -8,7 +8,11 @@ Sometimes you need to store a list of elements in memory. Suppose you’re writi
 
 Should you use an array, or a linked list? Let’s store the expenses in an array first, because it’s easier to grasp. Using an array means all your expenses are stored contiguously (right next to each other) in memory.
 
+![example 1: array expenses](../../static/img/array-expenses.webp)
+
 Now suppose you want to add a fourth expense. But the next drawer is taken up.
+
+![example 2: array expenses](../../static/img/array-expenses.webp)
 
 It’s like going out with your friends and finding a place to sit but another friend joins you, and there’s no place for them. You have to move to a new spot where you all fit. In this case you need to ask your computer for a different chunk of memory that can fit four expenses. Then you need to move all your expenses there.
 
@@ -32,7 +36,7 @@ With a linked lists, your items can be anywhere in memory.
 
 ## Array vs LinkedList
 
-[Array vs Linkedlist]
+![Array vs Linkedlist](../../static/img/array-linkedlist.webp)
 
 In an array we know the address of each element of the array. As we can see in the image above we have an array with 5 memory units and this array contains 3 elements, as the elements are stored in contiguous memory locations (the elements in an array are numbered and this numbering starts from 0) we know where it starts and where it ends.
 
@@ -84,8 +88,10 @@ And if there’s no space, you might have to copy everything to a new location! 
 
 What if you want to delete an element? Again, linked lists are better, because you just need to change what previous element points to. With arrays everything needs to be moved up when you delete an element.
 
-Run times for common operations on arrays and list:
-Run times for common operations
+### Run times for common operations on arrays and list:
+
+![run times](../../static/img/deletions.webp)
+
 Insertions and deletions are O(1) time because you commonly will have track the first and last items in a linked list, so would take only O(1) to add or delete.
 
 Which are used more: arrays or linked lists? Obviously, it depends, on the use case. But arrays see a lot of use because they allow random access.
