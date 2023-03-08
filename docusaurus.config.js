@@ -60,9 +60,9 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       algolia: {
-        appId: "HDQJ0QCZIM",
-        apiKey: "baf81d161179649c3def0abda9ddd299",
-        indexName: "fg_website",
+        appId: "7RCQQY6CI7",
+        apiKey: "bc529d44e2ae879dc3e371587f5c7169",
+        indexName: "frontend_garage",
       },
       navbar: {
         title: "Frontend Garage",
