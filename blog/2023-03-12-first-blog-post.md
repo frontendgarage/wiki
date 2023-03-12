@@ -1,11 +1,7 @@
 ---
 slug: welcome
 title: The Garage is open!
-authors:
-  name: Kemil Beltre
-  title: Frontend Garage
-  url: https://kemilbeltre.com/
-  image_url: https://github.com/kemilbeltre.png
+authors: kemilbeltre
 tags: [Hey, The garage is Open]
 ---
 
