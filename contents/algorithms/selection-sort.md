@@ -47,3 +47,7 @@ Sort an array from smallest to largest.
 
 Selection sort is the simplest sorting algorithm that works by repeatedly finding the minimum element (considering ascending order)
 from the unsorted part and putting it at the beginning.
+
+## Link to Implementation
+
+- [Selection sort](https://github.com/kemilbeltre/sde-topics/tree/main/core/algorithms/selection-sort)

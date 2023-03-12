@@ -41,4 +41,9 @@ Explicaciones en profundidad de los Algoritmos y Estructuras de Datos más comun
 - Casos de uso
 - Tiempos de ejecución
 - Enlace a la implementación
-- La implementación de los Algoritmos y Estructuras de Datos estará en este **repositorio**.
+
+## Implementacines
+
+Las implementaciones estarán en este [repositorio](https://github.com/kemilbeltre/sde-topics).
+
+Cada implementación estará documentada y testeada.

@@ -48,4 +48,8 @@ In-depth explanations of the most common Algorithms and Data Structures.
 - Runtimes
 - Link to implementation
 
-The implementation of the Algorithms and Data Structures will be in this **repository**.
+## Implementation
+
+The implementations will be in this [repository](https://github.com/kemilbeltre/sde-topics).
+
+Each implementation will be documented and tested.

@@ -47,3 +47,7 @@ Ordenar un array de menor a mayor.
 
 La ordenación por selección es el algoritmo de ordenación más simple que funciona encontrando repetidamente el elemento mínimo (considerando orden ascendente)
 de la parte no ordenada y poniéndolo al principio.
+
+## Enlace a Implementación
+
+- [Selection sort](https://github.com/kemilbeltre/sde-topics/tree/main/core/algorithms/selection-sort)
