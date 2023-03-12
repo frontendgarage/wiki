@@ -6,7 +6,7 @@ sidebar_position: 1
 
 ## What is this?
 
-Frontend Garage is place where you can learn the foundations of Software Enginering
+Frontend Garage is place where you can learn the foundations of Software Engineering
 although in essence it is my personal archive where I keep those things I have learned.
 
 My main goal is to learn by sharing, I hope this resources will give you the foundation you need
