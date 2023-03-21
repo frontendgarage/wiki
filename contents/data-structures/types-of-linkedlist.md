@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Types of Linked Lists
 
-There are diiferent types of linked list and in this section you will learn the foundamentals
+There are diferent types of linked list and in this section you will learn the foundamentals
 of the main linked lists.
 
 A Linked list is linear data structure that include a series of connected nodes.
