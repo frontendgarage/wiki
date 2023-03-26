@@ -6,7 +6,7 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #C147E9;
+  --ifm-color-primary: #b43cdc;
   --ifm-color-primary-dark: #29784c;
   --ifm-color-primary-darker: #277148;
   --ifm-color-primary-darkest: #205d3b;
@@ -17,9 +17,16 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
+[data-theme="light"] {
+  --docsearch-muted-color: #606770 !important;
+  --docsearch-container-background: rgba(94, 100, 112, 0.7) !important;
+  --docsearch-modal-background: #f1f2f5 !important;
+  --docsearch-searchbox-background: #f0f8ff !important;
+}
+
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #916BBF;
+[data-theme="dark"] {
+  --ifm-color-primary: #d88aef;
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
   --ifm-color-primary-darkest: #1a8870;
@@ -28,7 +35,6 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
-
 
 .navbar-icon {
   border-radius: 50%;
