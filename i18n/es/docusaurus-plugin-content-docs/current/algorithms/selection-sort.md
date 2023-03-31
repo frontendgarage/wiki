@@ -48,6 +48,31 @@ Ordenar un array de menor a mayor.
 La ordenación por selección es el algoritmo de ordenación más simple que funciona encontrando repetidamente el elemento mínimo (considerando orden ascendente)
 de la parte no ordenada y poniéndolo al principio.
 
-## Enlace a Implementación
+## Implementación del Selection Sort
 
-- [Selection sort](https://github.com/kemilbeltre/sde-topics/tree/main/core/algorithms/selection-sort)
+```ts
+function findSmallest(nums: number[], index: number) {
+  let smallest = nums[index];
+  let swapIndex = index;
+  for (let i = index + 1; i <= nums.length; i++) {
+    if (nums[i] < smallest) {
+      smallest = nums[i];
+      swapIndex = i;
+    }
+  }
+  return { swapIndex, smallest };
+}
+
+export default function selectionSort(nums: number[]): number[] {
+  for (let i = 0; i < nums.length - 1; i++) {
+    const { smallest, swapIndex } = findSmallest(nums, i);
+    if (i !== swapIndex) {
+      // if smallest is not the current index, swap
+      const tmp = nums[i];
+      nums[i] = smallest;
+      nums[swapIndex] = tmp;
+    }
+  }
+  return nums;
+}
+```
