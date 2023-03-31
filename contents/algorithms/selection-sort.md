@@ -48,6 +48,31 @@ Sort an array from smallest to largest.
 Selection sort is the simplest sorting algorithm that works by repeatedly finding the minimum element (considering ascending order)
 from the unsorted part and putting it at the beginning.
 
-## Link to Implementation
+## Selection Sort Implementation
 
-- [Selection sort](https://github.com/kemilbeltre/sde-topics/tree/main/core/algorithms/selection-sort)
+```ts
+function findSmallest(nums: number[], index: number) {
+  let smallest = nums[index];
+  let swapIndex = index;
+  for (let i = index + 1; i <= nums.length; i++) {
+    if (nums[i] < smallest) {
+      smallest = nums[i];
+      swapIndex = i;
+    }
+  }
+  return { swapIndex, smallest };
+}
+
+export default function selectionSort(nums: number[]): number[] {
+  for (let i = 0; i < nums.length - 1; i++) {
+    const { smallest, swapIndex } = findSmallest(nums, i);
+    if (i !== swapIndex) {
+      // if smallest is not the current index, swap
+      const tmp = nums[i];
+      nums[i] = smallest;
+      nums[swapIndex] = tmp;
+    }
+  }
+  return nums;
+}
+```
