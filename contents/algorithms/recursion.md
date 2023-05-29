@@ -19,6 +19,12 @@ Here's one approach.
 4. If you find the object, you're done!
 5. Repeat.
 
+Here's an alternate approach.
+
+1. Look through the box.
+2. If you find a box, go to step 1.
+3. If you find the object, you're done!
+
 Which approach seems easier to you? The first approach uses a while loop. While the pile isn't empty, grab a box
 and look through it:
 
@@ -34,11 +40,8 @@ def look_for_object(main_box):
         print "found the object"
 ```
 
-Here's an alternate approach.
-
-1. Look through the box.
-2. If you find a box, go to step 1.
-3. If you find the object, you're done!
+The second way uses recursion. Recursion is where a function calls itself.
+Here's the second way in pseudocode:
 
 ```py
 def look_for_object(box):
