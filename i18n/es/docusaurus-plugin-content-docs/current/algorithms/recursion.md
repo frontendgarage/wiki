@@ -18,6 +18,12 @@ Aquí tienes un enfoque.
 4. Si encuentras el objeto, ¡has terminado!
 5. Repite.
 
+He aquí un enfoque alternativo.
+
+1. Mira a través de la caja.
+2. Si encuentras una caja, ve al paso 1.
+3. Si encuentras el objeto, ¡has terminado!
+
 ¿Qué método te parece más sencillo? El primer método utiliza un bucle while. Mientras la pila no esté vacía, coge una caja
 y mira a través de ella:
 
@@ -33,11 +39,8 @@ def look_for_object(main_box):
         print "found the object"
 ```
 
-He aquí un enfoque alternativo.
-
-1. Mira a través de la caja.
-2. Si encuentras una caja, ve al paso 1.
-3. Si encuentras el objeto, ¡has terminado!
+El segundo utiliza recursion. Recursion is cuando una función se llama a si misma.
+Aquí el segundo ejemplo en pseudocode:
 
 ```py
 def look_for_object(box):
