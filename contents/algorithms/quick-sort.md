@@ -243,8 +243,105 @@ def quicksort(array):
 
 ## Big O notation revisited
 
+Quicksort is unique because its speed depends on the pivot you choose.  
+Before I talk about quicksort, let's look at the most common Big O run
+times again.
+
+![Big O of bs, ss, qsort, ssort, the traversaling salesman](../../static/img/big-o-revised.png)
+
+> Estimates based on a slow computer that performs 10 operations per second
+
+Each run time also has an example algorithm attached.
+
+There's another sorting algorithm called merged sort, which is O(n log n). Much faster! Quicksort is a tricky
+case. In the worst case, quicksort takes O(n^2) time.
+
+It's as slow as selection sort! But that's the worst case. In the average case, quicksort takes O(n log n) time. So
+you might be wondering:
+
+- What do worst case and average case means here?
+- If quicksort is O(n log n) on average, but merge sort is O(n log n)
+  always, why not use merge sort? Isn't faster?
+
 ## Merge sort vs. quicksort
+
+Suppose you have this simple function to print every time in a list:
+
+```py
+def print_items(list):
+  for item in list:
+    print item
+```
+
+This function goes through every item in the list and prints it out.
+Because it loops over the whole list once, this function runs in O(n)
+time. Now, suppose you change this function so it sleeps for 1 second
+before it prints out an item:
+
+```py
+from time import sleep
+def print_items2(list):
+  for item in list:
+  sleep(1)
+  print item
+```
+
+Before it prints out an item, it will pause for 1 second. Suppose you
+print a list of five items using both functions.
+
+[3, 2, 4]
+
+```shell
+print_items: 3 2 4
+
+print_items2: <sleep> 3<sleep> 2<sleep> 4
+```
+
+Both functions loop through the list once, so the're both O(n) time.
+Which one do you think will be faster in practice? I think `print_items` will
+be much faster because it doesn't pause for 1 second before printing an item.
+So even though both functions are the same speed in Big O notation, `print_items` is
+faster in practice. When you write Big O notation like O(n), it really means this.
+
+```
+some fixed amount of time -> c * n
+```
+
+c is some fixed amount of time that your algorithm takes. It's called the constant.
+For example, it might be 10 milliseconds _ n for `print_items` versus 1 second _ n for
+`print_items2`.
+
+You usually ignore that constant, because if two algorithm have different Big O times,
+the constant doesn't matter. Take binary search and simple search, for example.
+Suppose both algorithms had these constants.
+
+![simple search vs binary search](../../static/img/ss-vs-bs-constant.png)
+
+Simple search seems to be faster, but what if you're searching in a list of 4 billion elements.
+Here are the times.
+
+![simple search vs binary search - 4 billion search](../../static/img/ss-bs-big-search.png)
+
+As you can see, binary search is still way faster. That constant didn't make a difference
+at all.
+
+But sometimes the constant can make a difference. Quicksort versus merge sort is an example.
 
 ## Average case vs. worst case
 
+In the worst-case analysis, we calculate the upper limit of the execution time of an
+algorithm. It is necessary to know the case which causes the
+execution of the maximum number of operations.
+
+In the average case analysis, we take all possible inputs and calculate the computation time for all inputs. Add up all
+the calculated values and divide the sum by the total number of entries.
+
 ## Recap
+
+- D&C works by breaking a probem down into smaller and smaller pieces.
+- Iy you're implementing quicksort, choose a random element as the pivot.
+  The average runtime of quicksort is O(n log n)!
+- The constant in Big O notation can matter sometimes. That's why quicksort
+  is faster than merge sort.
+- The constant almost never matters for simple search versus binary search,
+  because O(log n) is so much faster than O(n) whe your list gets big.
