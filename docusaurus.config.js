@@ -96,7 +96,7 @@ const config = {
             </svg>`,
           },
           {
-            href: 'https://discord.gg/sBXFQaHu',
+            href: 'https://discord.gg/gV3cpBfeQU',
             position: 'right',
             className: 'navbar-icon navbar-icon-discord',
             'aria-label': 'Discord channel',
