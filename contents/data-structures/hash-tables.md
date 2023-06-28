@@ -23,6 +23,33 @@ The answer is simple: hash functions.
 
 A hash function is a function where you put in a string and you get back a number.
 
+There are some requirements for hash functions:
+
+- It need to be consistent.
+- It should map different words to different numbers.
+
+So a hash function maps strings to numbers. What is that good
+for? Well, you can use it to make your "price dictionary".
+
+Start with an array
+
+You'll store all your prices in the array, until the whole array is full.
+
+And then you could ask for any price that you put it in.
+
+The hash function tells you exactly where the price is stored, so you
+don't have to search at all! This works because:
+
+- The hash function consistently maps a name to the same index.
+- The hash function maps different strings to different indexes.
+- The hash function knows how big your array is and only returns
+valid indexes.
+
+Put a hash function and an array together, and you get a data structure
+called a hash table.
+
+You'll probably never have to implement hash tables yourself.
+
 ## Use cases
 
 Hash tables are used everywhere.
@@ -180,6 +207,41 @@ built in. You can use the built-in hash table and assume it will have good perfo
 
 ### Load factor
 
+The load factor of a hash table is easy to calculate.
+
+Number of items in hash tables divide by total number of slots.
+
+Hash tables use an array for storage, so you count the number of occupied
+slots in an array.
+
+Load factor measures how many empty slots remain in your hash table.
+
+Having a load factor greater than 1 means you have more items than slots in your array.
+
+Once the load factor start to grow, you need to add more slots to your hash table. This is
+called resizing.
+
+The rule of thumb is to make an array that is twice the size. Then re-insert all those items
+into this new hash table using the hash function.
+
+With a lower load factor, you'll have fewer collisions, and your table will perform better. A
+good rule of thumb is, resize when your load factor is greater than 0.7.
+
+Hash tables take O(1) even with resizing.
+
 ### A good hash functions
 
+A good hash function distributes values in the array evenly.
+
+A bad hash function groups values together and produces a lot of 
+collisions.
+
 ## Recap
+
+- You'll never have to implement a hash function yourself.
+- Hash tables have really fast search, insert and delete.
+- Once your load factor is greater than 0.7, it's time to resize
+your hash table.
+- Hash tables are used for modeling relationships from one item to another
+and caching data.
+- Hash tables are great for catching duplicates.
