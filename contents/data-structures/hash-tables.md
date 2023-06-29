@@ -23,6 +23,8 @@ The answer is simple: hash functions.
 
 A hash function is a function where you put in a string and you get back a number.
 
+![Hash function](../../static/img/hash-fuction.png)
+
 There are some requirements for hash functions:
 
 - It need to be consistent.
@@ -32,6 +34,8 @@ So a hash function maps strings to numbers. What is that good
 for? Well, you can use it to make your "price dictionary".
 
 Start with an array
+
+![Array](../../static/img/array-hash-tables.png)
 
 You'll store all your prices in the array, until the whole array is full.
 
@@ -98,9 +102,44 @@ Hash tables are one way to provide this functionality.
 
 ### Preventing duplicates entries
 
-Suppose you're running a voting booth. Naturally, every person can vote just once.
-How do you make sure they haven't vote before? When someone comes in to vote, you
-ask for their full name. Then you check it against the list of people who have voted.
+Suppose you have a huge library with thousands of books, and you want to organize them in a way that makes it easy to find any book
+quickly. However, you don't want to have duplicate copies of the same book taking up unnecessary space on the shelves.
+
+Each book can be represented by its unique ISBN (International Standard Book Number), which acts as its identifier. The hash table
+will be like a virtual shelf where books are stored based on their ISBN.
+
+Here's the code:
+
+```python
+books = {}
+
+def check_book(isbn):
+        if book.get(isbn):
+            print "already exists in the library"
+        else:
+            books[isbn] = True
+            print "add this book to the library"
+```
+
+Let's test it a few times:
+
+```
+>> check_book('1234')
+add this book to the library
+>> check_book('7878')
+add this book to the library
+>> check_book('7878')
+already exists in the library
+```
+
+As you can see, when we tried to add the same book two times,
+it prints, "already exists in the library"
+
+If you were storing these ISBN in a list, this function would eventually become
+really slow, because it would have to run a simple search over the entire list. But
+you're storing the ISBN in a hash table instead, and a hash table instantly tells you
+whether this book's ISBN is in the hash table or not. Checking for duplicates is very
+fast with a hash table.
 
 ### Using hash tables as a cache
 
@@ -186,6 +225,7 @@ they won't get long if you use a good hash function!
 A good hash function will give you very few collisions.
 
 ## Performance
+
 In the average case, hash tables take O(1) for everything. O(1) is called
 constant time. It doesn't mean instant. It means the time taken will stay
 the same, regardless of how big the hash table is.
@@ -233,8 +273,12 @@ Hash tables take O(1) even with resizing.
 
 A good hash function distributes values in the array evenly.
 
+![Array good hash function](../../static/img/array-good-hash-function.png)
+
 A bad hash function groups values together and produces a lot of 
 collisions.
+
+![Array + Linked list bad hash function](../../static/img/array-linked-list-bad-hash-function.png)
 
 ## Recap
 
