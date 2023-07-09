@@ -13,16 +13,16 @@ of elegant code.
 ## Divide & conquer
 
 Quicksort employ an algorithm paradigm based on recursion. This paradigm, divide and conquer, breaks
-a problem into subproblems that are similar to the original problem, recursevely solve the subproblems, and
-finally combines the solutions to the subproblems to solve the original problem. Because D&C solves subproblems
-recursevely, each subproblem must be smaller than the orginal problem, and there must be a base case for subproblems.
+a problem into sub-problems that are similar to the original problem, recursively solve the sub-problems, and
+finally combines the solutions to the sub-problems to solve the original problem. Because D&C solves sub-problems
+recursively, each sub-problem must be smaller than the original problem, and there must be a base case for sub-problems.
 You should think as D&C algorithm as having 3 parts:
 
-1. **Divide**: the problem into a number of subproblems that are smaller
+1. **Divide**: the problem into a number of sub-problems that are smaller
    instances of the same problem.
-2. **Conquer**: the subproblems by solving them recursevely. If they are
-   small enough, solve the subproblem as base case.
-3. **Combine**: the solutions to the subproblems into the orignal problem.
+2. **Conquer**: the sub-problems by solving them recursively. If they are
+   small enough, solve the sub-problem as base case.
+3. **Combine**: the solutions to the sub-problems into the original problem.
 
 ## Quicksort in practice
 
