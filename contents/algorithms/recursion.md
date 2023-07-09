@@ -41,7 +41,7 @@ def look_for_object(main_box):
 ```
 
 The second way uses recursion. Recursion is where a function calls itself.
-Here's the second way in pseudocode:
+Here's the second way in pseudo-code:
 
 ```py
 def look_for_object(box):
@@ -52,23 +52,23 @@ def look_for_object(box):
       print "found the object"
 ```
 
-Both approaches accomblish the same thing, but the second approach is clearer to me. Recursion is used when it
-makes the solution clearer. There's no performance benifit to using recursion; in fact, loops are sometimes better
+Both approaches accomplish the same thing, but the second approach is clearer to me. Recursion is used when it
+makes the solution clearer. There's no performance benefit to using recursion; in fact, loops are sometimes better
 for performance.
 
 ## The stack
 
-Suppose you're throwing a barbecue. You keep a todo list for the
+Suppose you're throwing a barbecue. You keep a to-do list for the
 barbecue, in the form of a stack of sticky notes.
 
-Remember back when we talked about arrays and lists, and you had a todo list?
-You could add todo items anywhere to the list or delete random items. The stack
+Remember back when we talked about arrays and lists, and you had a to-do list?
+You could add to-do items anywhere to the list or delete random items. The stack
 of sticky notes is much simpler. When you insert an item, it gets added to the top
 of the list. When you read an item, you only read the topmost item, and it's taken
-off the list. So your todo list has only two actions: push (insert) and pop (remove and read).
+off the list. So your to-do list has only two actions: push (insert) and pop (remove and read).
 
 The stack is a simple data structure.  
-You've using a stack this whole time without realising it!
+You've using a stack this whole time without realizing it!
 
 ## The call stack
 
@@ -101,7 +101,7 @@ Let's walk through what happens when you call a function.
 > **Note**
 > print is a function in Python, but to make things easier for this example, we're pretending it isn't.
 
-Suppose you call `greet("maggie)`. Firt, your computer allocates a box
+Suppose you call `greet("maggie)`. First, your computer allocates a box
 of memory for that function call.
 
 Now let's use the memory. The variable `name` is set to "maggie". That

@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Types of Linked Lists
 
-There are diferent types of linked list and in this section you will learn the foundamentals
+There are different types of linked list and in this section you will learn the fundamentals
 of the main linked lists.
 
 A Linked list is linear data structure that include a series of connected nodes.
@@ -26,7 +26,7 @@ where they are used to represent shapes or animations.
 ## Single Linked List
 
 In a singly linked list each node has a reference to the next node in the sequence, but
-there is not reference to the previus node. This makes a single linked lists simple and
+there is not reference to the previous node. This makes a single linked lists simple and
 efficient to implement, but it can make certain operations, such as reversing the list,
 more difficult.
 
