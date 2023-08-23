@@ -7,7 +7,6 @@ Dijkstra's algorithm is an algorithm to find the shortest path in a weighted gra
 
 > Dijkstra's algorithm to find the shortest path between _a_ and _b_.
 
-
 Breadth-first search will find you the path with the fewest segments. What if you want the fastest path instead? You can do that fastest with a different algorithm called Dijkstra=s algorithm.
 
 ## Working with Dijkstra's algorithm
@@ -47,10 +46,40 @@ When you find a shorter path for a neighbor of B, update its cost. In this case,
 
 ## Terminology
 
+When you work with Dijktra's algorithm, each edge in the graph has a number associated with it and it's called **weights**.
+
+A graph with weights is called a weighted graph. A graph without weights is called unweighted graph.
+
+To calculate the shortest path in an unweighted graph, use breath-first search. To calculate the shortest path in a weighted graph, use Dijstra's algorithm.
+
+Graph can also have cycles.
+
+It means you can start at a node, travel around, and end up at the same node. Suppose you're trying to find the shortest path in this graph that has a cycle.
+
+Would it make sense to follow the cycle? Well, you can use the path that avoids the cycle.
+
+Or you can follow the cycle.
+
+You end up at node A either way, but the cycle adds more weigh. You could even follow the cycle twice if you wanted.
+
+But every time you follow the cycle, you're just adding 8 to the total weight. So following the cycle will never give you the shortest path.
+
+An undirected graph means that both nodes point each other. That's a cycle!
+
+Dijktra's algorithm only works on **graphs with no cycles**, or on graphs with a positive weight cycle.
+
 ## Trading
 
+
 ## Negative-weight edges
+
+
 
 ## Implementation
 
 ## Recap
+
+- Breadth-first search is used to calculate the shortest path for an unweighted graph.
+- Dijktra's algorithm is used to calculate the shortest path for a weighted graph.
+- Dijktra's algorithm works when all the weights are positive.
+- If you have negative weights, use the Bellman-Ford algorithm.
