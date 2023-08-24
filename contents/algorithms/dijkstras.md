@@ -1,5 +1,11 @@
+---
+sidebar_position: 6
+---
 
-# Dijkstra's
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Dijkstra's algorithm
 
 Dijkstra's algorithm is an algorithm to find the shortest path in a weighted graph, which may represent for example, road networks.
 
@@ -7,17 +13,21 @@ Dijkstra's algorithm is an algorithm to find the shortest path in a weighted gra
 
 > Dijkstra's algorithm to find the shortest path between _a_ and _b_.
 
-Breadth-first search will find you the path with the fewest segments. What if you want the fastest path instead? You can do that fastest with a different algorithm called Dijkstra=s algorithm.
+Breadth-first search will find you the path with the fewest segments. What if you want the fastest path instead? You can do that fastest with a different algorithm called Dijkstra's algorithm.
 
 ## Working with Dijkstra's algorithm
 
 Let's say we have the following graph.
 
+![Graph image](../../static/img/dijkstras-algorithm-graph-1.png)
+
 Each segment has a travel time in minutes. You'll use Dijkstra's algorithm to go from start to finish in the shortest possible time.
 
 If you ran breath-first search on this graph, you'd get this shortest path.
 
-But that path takes 10 minutes. Let's see if you can find a path that takes less time! There are four steps to Dijkstra's algorithm:
+![Graph image - using BFS](../../static/img/dijkstras-algorithm-graph-bfs.png)
+
+But that path takes 8 minutes. Let's see if you can find a path that takes less time! There are four steps to Dijkstra's algorithm:
 
 1. Find the "cheapest" node. The node you can get to in least amount of time.
 2. Update the cost of the neighbors of this node.
@@ -26,23 +36,40 @@ But that path takes 10 minutes. Let's see if you can find a path that takes less
 
 **Step 1**: Find the cheapest node. You're standing at the start, wondering if you should go to node A or node B. How long does it take to get to each node?
 
+![Graph image - using BFS](../../static/img/dijkstras-algorithm-step-1.png)
+
 It takes 7 minutes to get to node A and 2 minutes to get to node B.
 The rest of the nodes, you don't know yet.
 
-Because you don't know how long it takes to get to finish yet, you put down infinity. Node B is the closest node... it's 3 minutes away.
+Because you don't know how long it takes to get to finish yet, you put down infinity. Node B is the closest node... it's 2 minutes away.
+
+![Graph image - using BFS](../../static/img/dijkstras-algorithm-table-1.png)
 
 **Step 2**: Calculate how long it takes to get to all of node B's neighbors by following an edge from B.
 
+![Graph image - using BFS](../../static/img/dijkstras-algorithm-graph-table-2.png)
+
 You just found a shorter path to node A! It used to take 7 minutes to get to node A.
 
-But if you go through node B, there's a path that only takes 6 minutes.
+But if you go through node B, there's a path that only takes 5 minutes.
 
 When you find a shorter path for a neighbor of B, update its cost. In this case, you found
 
 - A shorter path to A (down from 7 minutes to 5 minutes)
-- A shorter path to the finish (down from infinity to 9 minutes)
+- A shorter path to the finish (down from infinity to 7 minutes)
 
 **Step 3**: Repeat!
+
+At the end the final path should be:
+
+![Graph image - example result ](../../static/img/dijkstras-algorithm-graph-result.png)
+
+Breadth-first search wouldn't have found this as the shortest path, 
+because it has three segments. And there's a way to get from the start to the finish
+in two segments.
+
+
+![Graph image - using BFS final result](../../static/img/dijkstras-algorithm-graph-bfs-result.png)
 
 ## Terminology
 
