@@ -11,7 +11,7 @@ Dijkstra's algorithm is an algorithm to find the shortest path in a weighted gra
 
 ![Dijkstra's algorithm to find the shortest path between _a_ and _b_.](../../static/img/dijkstra_animation.gif)
 
-> Dijkstra's algorithm to find the shortest path between _a_ and _b_.
+> Dijkstra's algorithm to find the shortest path between *a* and *b*.
 
 Breadth-first search will find you the path with the fewest segments. What if you want the fastest path instead? You can do that fastest with a different algorithm called Dijkstra's algorithm.
 
@@ -64,10 +64,9 @@ At the end the final path should be:
 
 ![Graph image - example result ](../../static/img/dijkstras-algorithm-graph-result.png)
 
-Breadth-first search wouldn't have found this as the shortest path, 
+Breadth-first search wouldn't have found this as the shortest path,
 because it has three segments. And there's a way to get from the start to the finish
 in two segments.
-
 
 ![Graph image - using BFS final result](../../static/img/dijkstras-algorithm-graph-bfs-result.png)
 
@@ -95,14 +94,163 @@ An undirected graph means that both nodes point each other. That's a cycle!
 
 Dijktra's algorithm only works on **graphs with no cycles**, or on graphs with a positive weight cycle.
 
-## Trading
-
-
 ## Negative-weight edges
 
+You can't use Dijkstra's algorithm if you have negative-weight edges.
 
+Negative-weight edges break the algorithm.
+
+Since Dijkstra follows a Greedy Approach, once a node is marked as visited it cannot be reconsidered even if there
+is another path with less cost or distance. This issue arises only if there exists
+a negative weight or edge in the graph.
+
+If you want to find the shortest path in a graph that has negative-weight edges, there's an algorithm for that!
+It's called the Bellman-Ford algorithm.
 
 ## Implementation
+
+Let's see the implemention of the Dijkstra's algorithm:
+
+Graph for the example:
+
+![Graph image - implementation ](../../static/img/dijkstras-algoritm-graph-implementaion.png)
+
+Code:
+
+<Tabs>
+<TabItem value="js" label="JavaScript">
+
+```js
+// Graph initialisation
+const graph = {};
+
+// Weight representation
+graph["start"] = {};
+graph["start"]["a"] = 6;
+graph["start"]["b"] = 2;
+
+graph["a"] = {};
+graph["a"]["fin"] = 1;
+
+graph["b"] = {};
+graph["b"]["a"] = 3;
+graph["b"]["fin"] = 5;
+
+graph["fin"] = {};
+
+// Cost for each node
+const infinity = Number.POSITIVE_INFINITY;
+const costs = {};
+costs["a"] = 6;
+costs["b"] = 2;
+costs["fin"] = infinity;
+
+// Parents
+const parents = {};
+parents["a"] = "start";
+parents["b"] = "start";
+parents["fin"] = null;
+
+const processed = [];
+
+function findLowestCostNode(costs) {
+  let lowestCost = infinity;
+  let lowestCostNode = null;
+  for (let node in costs) {
+    const cost = costs[node];
+    if (cost < lowestCost && !processed.includes(node)) {
+      lowestCost = cost;
+      lowestCostNode = node;
+    }
+  }
+  return lowestCostNode;
+}
+
+function dijkstras(costs) {
+  let node = findLowestCostNode(costs);
+  while (node !== null) {
+    const cost = costs[node];
+    const neighbors = graph[node];
+    for (let n in neighbors) {
+      const newCost = cost + neighbors[n];
+      if (costs[n] > newCost) {
+        costs[n] = newCost;
+        parents[n] = node;
+      }
+    }
+    processed.push(node);
+    node = findLowestCostNode(costs);
+  }
+}
+
+dijkstras(costs);
+```
+
+</TabItem>
+<TabItem value="py" label="Python">
+
+```py
+# Graph initialisation
+graph = {}
+
+# Weight representation
+graph['start'] = {}
+graph['start']['a'] = 6
+graph['start']['b'] = 2
+
+graph['a'] = {}
+graph['a']['fin'] = 1
+
+graph['b'] = {}
+graph['b']['a'] = 3
+graph['b']['fin'] = 5
+
+graph['fin'] = {}
+
+# Cost for each node
+infinity = float('inf')
+costs = {}
+costs['a'] = 6
+costs['b'] = 2
+costs['fin'] = infinity
+
+# Parents
+parents = {}
+parents['a'] = 'start'
+parents['b'] = 'start'
+parents['fin'] = None
+
+
+processed =  []
+
+def findLowestCostNode(costs):
+            lowestCost = float('inf')
+            lowestCostNode = None
+            for node in costs:
+                cost = costs[node]
+                if cost < lowestCost and node not in processed:
+                   lowestCost = cost
+                   lowestCostNode = node
+            return lowestCostNode
+
+def dijkstras(costs):
+        node = findLowestCostNode(costs)
+        while node is not None:
+            cost = costs[node]
+            neighbors = graph[node]
+            for n in neighbors.keys():
+                newCost = cost + neighbors[n]
+                if costs[n] > newCost:
+                    costs[n] = newCost
+                    parents[n] = node
+            processed.append(node)
+            node = findLowestCostNode(costs)
+
+dijkstras(costs)
+```
+
+</TabItem>
+</Tabs>
 
 ## Recap
 
