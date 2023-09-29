@@ -2,6 +2,9 @@
 sidebar_position: 2
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Selection Sort
 
 > In computer science, selection sort is an in-place comparison sorting algorithm. — Wikipedia
@@ -50,6 +53,9 @@ from the unsorted part and putting it at the beginning.
 
 ## Selection Sort Implementation
 
+<Tabs>
+<TabItem value="ts" label="TypeScript">
+
 ```ts
 function findSmallest(nums: number[], index: number) {
   let smallest = nums[index];
@@ -76,3 +82,26 @@ export default function selectionSort(nums: number[]): number[] {
   return nums;
 }
 ```
+
+</TabItem>
+<TabItem value="py" label="Python">
+
+```py
+def selection_sort(nums):
+    # Iterate through the list
+    for i in range(len(nums)):
+        # Find the index of the minimum element in the unsorted portion
+        min_index = i
+        for j in range(i + 1, len(nums)):
+            if nums[j] < nums[min_index]:
+                min_index = j
+
+        # Swap the current element with the minimum element
+        nums[i], nums[min_index] = nums[min_index], nums[i]
+
+    # Return the sorted list
+    return nums
+```
+
+</TabItem>
+</Tabs>
