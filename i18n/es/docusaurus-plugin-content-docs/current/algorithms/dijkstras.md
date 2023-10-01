@@ -72,7 +72,7 @@ en dos segmentos.
 
 ## Terminología
 
-Cuando trabajas con el algoritmo de Dijktra, cada arista del grafo tiene asociado un número que se llama **pesos**.
+Cuando trabajas con el algoritmo de Dijkstra, cada arista del grafo tiene asociado un número que se llama **pesos**.
 
 Un grafo con pesos se llama grafo ponderado. Un grafo sin pesos se llama grafo no ponderado.
 
@@ -92,7 +92,7 @@ Pero cada vez que sigues el ciclo, estás añadiendo 8 al peso total. Así que s
 
 Un grafo no dirigido significa que ambos nodos apuntan el uno al otro. ¡Eso es un ciclo!
 
-El algoritmo de Dijktra sólo funciona en **grafos sin ciclos**, o en grafos con un ciclo de peso positivo.
+El algoritmo de Dijkstra sólo funciona en **grafos sin ciclos**, o en grafos con un ciclo de peso positivo.
 
 ## Aristas de peso negativo
 
@@ -255,6 +255,6 @@ dijkstras(costs)
 ## Recap
 
 - Para calcular el camino más corto de un grafo no ponderado se utiliza el algoritmo Breadth-first search.
-- El algoritmo de Dijktra se utiliza para calcular el camino más corto de un grafo ponderado.
-- El algoritmo de Dijktra funciona cuando todos los pesos son positivos.
+- El algoritmo de Dijkstra se utiliza para calcular el camino más corto de un grafo ponderado.
+- El algoritmo de Dijkstra funciona cuando todos los pesos son positivos.
 - Si tiene pesos negativos, utilice el algoritmo de Bellman-Ford.

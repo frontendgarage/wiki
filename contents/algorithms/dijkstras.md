@@ -72,7 +72,7 @@ in two segments.
 
 ## Terminology
 
-When you work with Dijktra's algorithm, each edge in the graph has a number associated with it and it's called **weights**.
+When you work with Dijkstra's algorithm, each edge in the graph has a number associated with it and it's called **weights**.
 
 A graph with weights is called a weighted graph. A graph without weights is called unweighted graph.
 
@@ -92,7 +92,7 @@ But every time you follow the cycle, you're just adding 8 to the total weight. S
 
 An undirected graph means that both nodes point each other. That's a cycle!
 
-Dijktra's algorithm only works on **graphs with no cycles**, or on graphs with a positive weight cycle.
+Dijkstra's algorithm only works on **graphs with no cycles**, or on graphs with a positive weight cycle.
 
 ## Negative-weight edges
 
@@ -255,6 +255,6 @@ dijkstras(costs)
 ## Recap
 
 - Breadth-first search is used to calculate the shortest path for an unweighted graph.
-- Dijktra's algorithm is used to calculate the shortest path for a weighted graph.
-- Dijktra's algorithm works when all the weights are positive.
+- Dijkstra's algorithm is used to calculate the shortest path for a weighted graph.
+- dijkstra's algorithm works when all the weights are positive.
 - If you have negative weights, use the Bellman-Ford algorithm.
