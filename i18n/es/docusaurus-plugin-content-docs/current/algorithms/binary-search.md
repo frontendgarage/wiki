@@ -2,6 +2,9 @@
 sidebar_position: 1
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Binary Search
 
 Supongamos que busca a una persona en la guía telefónica. Su nombre empieza por K. Podrías empezar
@@ -36,10 +39,13 @@ con los números entre el 1 y 49.
 
 ## Implementación del Binary Search
 
+<Tabs>
+<TabItem value="ts" label="TypeScript">
+
 ```ts
 export default function binarySearch(
   haystack: number[],
-  needle: number
+  needle: number,
 ): boolean {
   let low = 0; // low and high keep track of which part of the list you'll search in.
   let high = haystack.length;
@@ -63,6 +69,31 @@ export default function binarySearch(
   return false; // The needle wasn't found.
 }
 ```
+
+</TabItem>
+<TabItem value="py" label="Python">
+
+```py
+def binarySearch(haystack, needle):
+    low = 0
+    high = len(haystack)
+
+    while low < high:
+        mid = low + (high - low) // 2
+        value = haystack[mid]
+
+        if value == needle:
+            return True
+        elif value > needle:
+            high = mid
+        else:
+            low = mid + 1
+
+    return False
+```
+
+</TabItem>
+</Tabs>
 
 ## Ejercicios
 
