@@ -36,7 +36,7 @@ Once you are comfortable with algorithms and data structures, you should start t
 
 **Note**: I will be adding these concepts as time goes by.
 
-## Frontend Garage website structure
+## Frontend Garage wiki structure
 
 ### Algorithms and Data Structures
 
