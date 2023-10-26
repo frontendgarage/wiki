@@ -33,12 +33,28 @@ const config = {
     },
   },
 
+  plugins: [
+    [
+      "content-docs",
+      /** @type {import('@docusaurus/plugin-content-docs').Options} */
+      ({
+        id: "design",
+        path: "design",
+        routeBasePath: "design",
+        editCurrentVersion: true,
+        sidebarPath: require.resolve("./sidebars.js"),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+      }),
+    ],
+  ],
+
   presets: [
     [
       "@docusaurus/preset-classic",
       {
         docs: {
-          path: "./contents",
+          path: "contents",
           routeBasePath: "/",
           sidebarPath: require.resolve("./sidebars.js"),
           editUrl: "https://github.com/frontendgarage/wiki/tree/main/",
@@ -74,6 +90,12 @@ const config = {
         items: [
           { to: "introduction", label: "Start reading", position: "left" },
           { to: "big-o", label: "Core", position: "left" },
+          {
+            to: "/design",
+            label: "Design",
+            position: "left",
+            activeBaseRegex: `/design/`,
+          },
           { to: "/blog", label: "Blog", position: "left" },
           {
             type: "localeDropdown",
