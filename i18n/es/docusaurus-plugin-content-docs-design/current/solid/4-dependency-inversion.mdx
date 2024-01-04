@@ -1,0 +1,83 @@
+---
+description: Dependency Inversion Principle
+---
+
+# Dependency Inversion
+
+El Principio de Inversión de Dependencias (DIP) es uno de los principios SOLID de diseño orientado a objetos, formulado por Robert C. Martin. DIP enfatiza la importancia de depender de abstracciones en lugar de implementaciones concretas, invirtiendo el flujo de dependencia tradicional en un sistema de software.
+
+Principios clave del Principio de Inversión de Dependencias (DIP):
+
+1. **Abstracciones sobre Implementaciones:**
+   - Los módulos de alto nivel (abstracciones) no deben depender de los módulos de bajo nivel (implementaciones concretas). En cambio, ambos deben depender de abstracciones.
+   - Las abstracciones proporcionan una base estable y flexible para construir sistemas.
+
+2. **Inversión de Control (IoC):**
+   - DIP promueve el uso de la Inversión de Control, donde el flujo de control se invierte en comparación con la programación procedural tradicional.
+   - En IoC, los módulos de alto nivel delegan responsabilidades a los módulos de bajo nivel a través de abstracciones, lo que permite una mayor flexibilidad y adaptabilidad.
+
+3. **Estabilidad y Flexibilidad:**
+   - Las abstracciones, como interfaces o clases abstractas, permanecen estables con el tiempo. Los cambios en las implementaciones concretas no afectan a los módulos de alto nivel que dependen de estas abstracciones.
+   - Esta estabilidad mejora la mantenibilidad y la solidez del sistema en general.
+
+4. **Desacoplamiento:**
+   - DIP facilita el desacoplamiento entre las diferentes partes de un sistema, reduciendo las dependencias y permitiendo que los componentes evolucionen de manera independiente.
+   - El desacoplamiento facilita la sustitución o modificación de componentes sin afectar todo el sistema.
+
+5. **Inyección de Dependencias:**
+   - La Inyección de Dependencias (DI) es una técnica común asociada con DIP, donde las dependencias se inyectan en una clase desde el exterior en lugar de crearse internamente.
+   - DI permite la configuración dinámica de componentes, haciendo que el sistema sea más adaptable y testeable.
+
+**Ejemplo:**
+
+Considera un escenario donde una clase `LightSwitch` controla una `LightBulb`. Sin adherirse a DIP, el `LightSwitch` depende directamente de la implementación concreta de `LightBulb`.
+
+```python
+# Sin DIP
+class LightBulb:
+    def turn_on(self):
+        pass
+
+    def turn_off(self):
+        pass
+
+class LightSwitch:
+    def __init__(self, bulb):
+        self.bulb = bulb
+
+    def operate(self):
+        # Dependencia directa de la implementación de LightBulb
+        if self.bulb.is_on():
+            self.bulb.turn_off()
+        else:
+            self.bulb.turn_on()
+```
+
+Con DIP, introducimos una abstracción (`SwitchableDevice`) y hacemos que tanto `LightSwitch` como `LightBulb` dependan de esta abstracción:
+
+```python
+# Con DIP
+class SwitchableDevice:
+    def turn_on(self):
+        pass
+
+    def turn_off(self):
+        pass
+
+class LightBulb(SwitchableDevice):
+    def is_on(self):
+        pass
+
+class LightSwitch:
+    def __init__(self, device):
+        self.device = device
+
+    def operate(self):
+        # Dependencia de la abstracción SwitchableDevice
+        if self.device.is_on():
+            self.device.turn_off()
+        else:
+            self.device.turn_on()
+```
+
+Ahora, tanto `LightSwitch` como `LightBulb` dependen de la abstracción `SwitchableDevice`, cumpliendo con el Principio de Inversión de Dependencias. Esto desacopla el módulo de alto nivel (`LightSwitch`) del módulo de bajo nivel (`LightBulb`), promoviendo la flexibilidad y la mantenibilidad.

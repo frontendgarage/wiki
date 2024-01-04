@@ -4,4 +4,59 @@ description: Open-Close Principle
 
 # Open-Close
 
-content
+The Open/Closed Principle (OCP) is one of the SOLID principles of object-oriented design, formulated by Bertrand Meyer. OCP suggests that a class should be open for extension but closed for modification. In other words, the behavior of a class can be extended without altering its source code.
+
+Key principles of the Open/Closed Principle (OCP):
+
+1. **Open for Extension:**
+   - The "open" part of OCP encourages developers to design classes in a way that allows for the addition of new functionality without modifying existing code.
+   - Extensions can be achieved through inheritance, composition, or other means, ensuring flexibility in the software.
+
+2. **Closed for Modification:**
+   - Once a class is established and tested, its source code should remain closed for modifications.
+   - The goal is to prevent unintentional side effects in existing functionalities and maintain stability.
+
+3. **Encapsulation:**
+   - OCP promotes encapsulation, emphasizing the encapsulation of behavior within classes.
+   - New functionalities should be added through the creation of new classes rather than altering existing ones.
+
+4. **Code Stability:**
+   - By adhering to OCP, developers contribute to code stability, reducing the risk of introducing errors or breaking existing features when extending the system.
+
+5. **Ease of Maintenance:**
+   - The closed-for-modification aspect simplifies maintenance, as developers can focus on extending functionalities in new classes without revisiting or risking changes to existing, well-established code.
+
+**Example:**
+
+Consider a system that calculates the areas of different shapes. Without adhering to OCP, adding a new shape requires modifying the existing `AreaCalculator` class. By following OCP, we can create a design that allows for easy extension without altering the existing class.
+
+```python
+# Without OCP
+class AreaCalculator:
+    def calculate_area(self, shape):
+        if isinstance(shape, Square):
+            # Calculate area for Square
+        elif isinstance(shape, Circle):
+            # Calculate area for Circle
+        # ... (more shapes)
+
+# With OCP
+class AreaCalculator:
+    def calculate_area(self, shape):
+        # Delegate the calculation to the specific shape class
+        return shape.calculate_area()
+
+class Shape:
+    def calculate_area(self):
+        pass
+
+class Square(Shape):
+    def calculate_area(self):
+        # Calculate area for Square
+
+class Circle(Shape):
+    def calculate_area(self):
+        # Calculate area for Circle
+```
+
+In the OCP-compliant example, each shape has its own class and is responsible for calculating its own area. This adheres to the OCP by allowing the system to be extended with new shapes without modifying the existing `AreaCalculator` class.
