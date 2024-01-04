@@ -1,0 +1,46 @@
+---
+description: Liskov Substitution Principle
+---
+
+# Liskov Substitution
+
+El Principio de Sustitución de Liskov (LSP) es uno de los principios SOLID de diseño orientado a objetos, introducido por Barbara Liskov. LSP enfatiza la importancia de mantener la compatibilidad entre las clases base y derivadas, afirmando que los objetos de una superclase deberían poder ser reemplazados por objetos de una subclase sin afectar la corrección del programa.
+
+Principios clave del Principio de Sustitución de Liskov (LSP):
+
+1. **Sustituibilidad:**
+   - Los objetos de una clase base deberían ser fácilmente reemplazables por objetos de una clase derivada sin alterar la corrección del programa.
+   - El código que depende de una clase base debería poder funcionar sin problemas con objetos de cualquier clase derivada.
+
+2. **Compatibilidad Comportamental:**
+   - Las clases derivadas deberían extender el comportamiento de la clase base sin alterar su comportamiento original.
+   - Si un código cliente trabaja con una clase base, debería seguir funcionando correctamente al proporcionarle una instancia de cualquier clase derivada.
+
+3. **Evitar Precondiciones Más Fuertes:**
+   - Las subclases no deberían imponer precondiciones más fuertes (es decir, requisitos más restrictivos) que las impuestas por la clase base.
+   - Las clases derivadas deberían respetar los contratos establecidos por la clase base.
+
+4. **Preservación de Invariantes:**
+   - Las invariantes (propiedades o condiciones que siguen siendo verdaderas) establecidas por la clase base deberían ser preservadas por la clase derivada.
+   - Una subclase no debería violar las suposiciones hechas por el código que trabaja con su clase base.
+
+5. **Manejo de Excepciones:**
+   - Las excepciones arrojadas por los métodos de una clase derivada deberían ser compatibles con las arrojadas por los métodos de la clase base.
+   - Los clientes no deberían sorprenderse por excepciones inesperadas al sustituir objetos.
+
+**Ejemplo:**
+
+Considera un escenario en el que tienes una clase `Bird` y una clase `Penguin` derivada de ella. Si la clase `Bird` tiene un método `fly()`, adherirse al LSP significa que llamar a `fly()` en una instancia de `Penguin` no debería causar problemas, a pesar de que los pingüinos no pueden volar.
+
+```python
+class Bird:
+    def fly(self):
+        pass
+
+class Penguin(Bird):
+    # Los pingüinos no pueden volar, pero pueden nadar
+    def swim(self):
+        pass
+```
+
+En este ejemplo, la clase `Penguin` no implementa el método `fly()`, lo cual es aceptable según LSP. Los clientes que utilizan un objeto `Bird`, esperando que vuele, aún pueden trabajar con un objeto `Penguin` sin encontrar errores inesperados. La clave es que la clase derivada no viola el comportamiento esperado establecido por la clase base.

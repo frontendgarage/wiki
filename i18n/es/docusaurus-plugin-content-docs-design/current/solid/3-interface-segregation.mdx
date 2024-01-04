@@ -1,0 +1,79 @@
+---
+description: Interface Segregation Principle
+---
+
+# Interface Segregation
+
+El Principio de Segregación de Interfaces (ISP) es uno de los principios SOLID de diseño orientado a objetos, y enfatiza que una clase no debería ser obligada a implementar interfaces que no utiliza. Promueve la idea de crear interfaces específicas para los clientes (clases o módulos) que las utilizan, evitando que las clases se vean sobrecargadas con métodos que no necesitan.
+
+Principios clave del Principio de Segregación de Interfaces (ISP):
+
+1. **Interfaces Específicas del Cliente:**
+   - En lugar de crear interfaces amplias y de propósito general, diseña interfaces que sean específicas para las necesidades de los clientes que las utilizan (clases o módulos).
+   - Esto asegura que cada clase solo esté obligada a implementar los métodos relevantes para sus requisitos específicos.
+
+2. **Evitar Interfaces "Gordas":**
+   - Las interfaces "gordas" contienen más métodos de los que una clase podría necesitar, lo que lleva a dependencias innecesarias y la posibilidad de implementar métodos irrelevantes.
+   - ISP sugiere dividir las interfaces en partes más pequeñas y enfocadas, reduciendo la posibilidad de obligar a las clases a implementar funcionalidades innecesarias.
+
+3. **Reducción de Dependencias:**
+   - Al adherirse a ISP, las clases se vuelven menos dependientes de métodos que no utilizan, reduciendo el acoplamiento entre diferentes partes del sistema.
+   - Reducir las dependencias contribuye a un código más modular y mantenible.
+
+4. **Flexibilidad en Implementaciones:**
+   - ISP permite flexibilidad en la implementación de interfaces, permitiendo que las clases implementen solo lo que es necesario para su funcionalidad específica.
+   - Esta flexibilidad promueve la adaptabilidad a cambios y simplifica modificaciones futuras.
+
+**Ejemplo:**
+
+Considera un escenario en el que tienes una interfaz `Worker` que incluye métodos tanto para tareas manuales como para tareas automatizadas. Sin seguir ISP, una clase como `Robot` podría verse obligada a implementar métodos irrelevantes para su naturaleza.
+
+```python
+# Sin ISP
+class Worker:
+    def do_manual_work(self):
+        pass
+
+    def operate_machine(self):
+        pass
+
+class HumanWorker(Worker):
+    def do_manual_work(self):
+        # Tarea manual específica de los humanos
+
+    def operate_machine(self):
+        # Los humanos no pueden operar una máquina
+
+class RobotWorker(Worker):
+    def do_manual_work(self):
+        # Los robots no realizan trabajo manual
+
+    def operate_machine(self):
+        # Operación de máquina específica de los robots
+```
+
+Siguiendo ISP, podemos crear interfaces separadas para el trabajo manual y la operación de máquinas, permitiendo que las clases implementen solo los métodos relevantes:
+
+```python
+# Con ISP
+class ManualWorker:
+    def do_manual_work(self):
+        pass
+
+class MachineOperator:
+    def operate_machine(self):
+        pass
+
+class HumanWorker(ManualWorker, MachineOperator):
+    def do_manual_work(self):
+        # Tarea manual específica de los humanos
+
+    def operate_machine(self):
+        # Operación de máquina específica de los humanos
+
+class RobotWorker(MachineOperator):
+    def operate_machine(self):
+        # Operación de máquina específica de los robots
+```
+
+Ahora, las clases pueden implementar solo las interfaces relevantes para su naturaleza, cumpliendo con el Principio de Segregación de Interfaces.

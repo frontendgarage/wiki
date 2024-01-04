@@ -1,0 +1,79 @@
+---
+description: Interface Segregation Principle
+---
+
+# Interface Segregation
+
+The Interface Segregation Principle (ISP) is one of the SOLID principles of object-oriented design, emphasizing that a class should not be forced to implement interfaces it does not use. It promotes the idea of creating client-specific interfaces to prevent classes from being burdened with methods they do not need.
+
+Key principles of the Interface Segregation Principle (ISP):
+
+1. **Client-Specific Interfaces:**
+   - Instead of creating large, general-purpose interfaces, design interfaces that are specific to the needs of the clients (classes or modules) that use them.
+   - This ensures that each class is only obligated to implement the methods relevant to its specific requirements.
+
+2. **Avoidance of Fat Interfaces:**
+   - Fat interfaces contain more methods than a class might need, leading to unnecessary dependencies and potential implementation of irrelevant methods.
+   - ISP suggests breaking down interfaces into smaller, focused ones, reducing the chance of forcing classes to implement unnecessary functionality.
+
+3. **Reduced Dependency:**
+   - By adhering to ISP, classes become less dependent on methods they don't use, reducing coupling between different parts of the system.
+   - Reducing dependencies contributes to a more modular and maintainable codebase.
+
+4. **Flexibility in Implementations:**
+   - ISP allows for flexibility in implementing interfaces, enabling classes to implement only what is required for their specific functionality.
+   - This flexibility promotes adaptability to changes and simplifies future modifications.
+
+**Example:**
+
+Consider a scenario where you have an `Worker` interface that includes methods for both manual and automated tasks. Without following ISP, a class like `Robot` may be forced to implement methods irrelevant to its nature.
+
+```python
+# Without ISP
+class Worker:
+    def do_manual_work(self):
+        pass
+
+    def operate_machine(self):
+        pass
+
+class HumanWorker(Worker):
+    def do_manual_work(self):
+        # Human-specific manual work
+
+    def operate_machine(self):
+        # Human cannot operate a machine
+
+class RobotWorker(Worker):
+    def do_manual_work(self):
+        # Robot does not perform manual work
+
+    def operate_machine(self):
+        # Robot-specific machine operation
+```
+
+Following ISP, we can create separate interfaces for manual work and machine operation, allowing classes to implement only the relevant methods:
+
+```python
+# With ISP
+class ManualWorker:
+    def do_manual_work(self):
+        pass
+
+class MachineOperator:
+    def operate_machine(self):
+        pass
+
+class HumanWorker(ManualWorker, MachineOperator):
+    def do_manual_work(self):
+        # Human-specific manual work
+
+    def operate_machine(self):
+        # Human-specific machine operation
+
+class RobotWorker(MachineOperator):
+    def operate_machine(self):
+        # Robot-specific machine operation
+```
+
+Now, classes can implement only the interfaces that are relevant to their nature, adhering to the Interface Segregation Principle.

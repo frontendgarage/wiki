@@ -1,0 +1,46 @@
+---
+description: Liskov Substitution Principle
+---
+
+# Liskov Substitution
+
+The Liskov Substitution Principle (LSP) is one of the SOLID principles of object-oriented design, introduced by Barbara Liskov. LSP emphasizes the importance of maintaining compatibility between base and derived classes, asserting that objects of a superclass should be replaceable with objects of a subclass without affecting the correctness of the program.
+
+Key principles of the Liskov Substitution Principle (LSP):
+
+1. **Substitutability:**
+   - Objects of a base class should be easily replaceable with objects of a derived class without altering the correctness of the program.
+   - Code that relies on a base class should be able to work seamlessly with objects of any derived class.
+
+2. **Behavioral Compatibility:**
+   - Derived classes should extend the behavior of the base class without altering its original behavior.
+   - If a client code works with a base class, it should continue to work correctly when provided with an instance of any derived class.
+
+3. **Avoidance of Stronger Preconditions:**
+   - Subclasses should not impose stronger preconditions (i.e., more restrictive requirements) than those imposed by the base class.
+   - Derived classes should honor the contracts established by the base class.
+
+4. **Preservation of Invariants:**
+   - Invariants (properties or conditions that remain true) established by the base class should be preserved by the derived class.
+   - A subclass should not violate the assumptions made by the code working with its base class.
+
+5. **Exception Handling:**
+   - Exceptions thrown by methods in a derived class should be compatible with those thrown by methods in the base class.
+   - Clients should not be surprised by unexpected exceptions when substituting objects.
+
+**Example:**
+
+Consider a scenario where you have a `Bird` class and a `Penguin` class derived from it. If the `Bird` class has a method `fly()`, adhering to LSP means that calling `fly()` on an instance of `Penguin` should not cause issues, even though penguins cannot fly.
+
+```python
+class Bird:
+    def fly(self):
+        pass
+
+class Penguin(Bird):
+    # Penguins cannot fly, but they can swim
+    def swim(self):
+        pass
+```
+
+In this example, the `Penguin` class doesn't implement the `fly()` method, which is acceptable according to LSP. Clients using a `Bird` object, expecting it to fly, can still work with a `Penguin` object without encountering unexpected errors. The key is that the derived class doesn't violate the expected behavior established by the base class.

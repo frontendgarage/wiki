@@ -1,0 +1,60 @@
+---
+description: Single Responsibility Principle
+---
+
+# Single Responsibility
+
+El Principio de Responsabilidad Única (SRP) es uno de los cinco principios SOLID de diseño orientado a objetos, introducido por Robert C. Martin. SRP defiende que una clase debería tener solo una razón para cambiar, lo que significa que debería tener solo una responsabilidad o encapsular una única funcionalidad.
+
+Principios clave del Principio de Responsabilidad Única (SRP):
+
+1. **Una Responsabilidad:**
+   - Una clase debería encapsular una y solo una responsabilidad o funcionalidad.
+   - Este principio tiene como objetivo promover un diseño claro y conciso donde cada clase tiene un propósito enfocado.
+
+2. **Razón para Cambiar:**
+   - La "razón para cambiar" se refiere a la motivación detrás de modificar una clase.
+   - Si una clase tiene múltiples responsabilidades y un aspecto del sistema cambia, puede requerir modificaciones en esa clase, afectando potencialmente otras responsabilidades no relacionadas.
+
+3. **Mantenibilidad Mejorada:**
+   - Al adherirse a SRP, el código se vuelve más mantenible ya que cada clase se enfoca en una tarea específica.
+   - Los cambios relacionados con una funcionalidad particular están aislados en la clase responsable de esa funcionalidad, reduciendo la probabilidad de efectos secundarios no deseados.
+
+4. **Mejora de la Legibilidad y Comprensión:**
+   - El código es más fácil de leer y entender cuando cada clase tiene un propósito claro y singular.
+   - SRP anima a los desarrolladores a crear clases más pequeñas y enfocadas, haciendo que la base de código sea más comprensible.
+
+5. **Diseño Flexible:**
+   - SRP facilita un diseño más flexible y adaptable.
+   - Cuando un sistema evoluciona o los requisitos cambian, las clases que siguen SRP son menos propensas a ser afectadas por modificaciones, ya que sus responsabilidades están bien definidas y aisladas.
+
+**Ejemplo:**
+
+Considera una clase que gestiona tanto la entrada/salida de archivos como la autenticación de usuarios. Aplicando SRP, estas responsabilidades deberían separarse en clases distintas. Una clase podría manejar las operaciones de archivo, y otra podría ser responsable de la autenticación de usuarios. Esta separación se adhiere al principio, asegurando que los cambios en un aspecto del sistema no afecten al otro.
+
+```python
+# Sin SRP
+class FileManagerAndAuthenticator:
+    def read_file(self, filename):
+        # Implementación de lectura de archivo
+
+    def write_file(self, filename, content):
+        # Implementación de escritura de archivo
+
+    def authenticate_user(self, username, password):
+        # Implementación de autenticación de usuario
+
+# Con SRP
+class FileManager:
+    def read_file(self, filename):
+        # Implementación de lectura de archivo
+
+    def write_file(self, filename, content):
+        # Implementación de escritura de archivo
+
+class Authenticator:
+    def authenticate_user(self, username, password):
+        # Implementación de autenticación de usuario
+```
+
+Al adherirse a SRP, las responsabilidades de la gestión de archivos y la autenticación de usuarios están claramente separadas, lo que conduce a un diseño más mantenible y modular.

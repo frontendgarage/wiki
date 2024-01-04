@@ -1,0 +1,83 @@
+---
+description: Dependency Inversion Principle
+---
+
+# Dependency Inversion
+
+The Dependency Inversion Principle (DIP) is one of the SOLID principles of object-oriented design, formulated by Robert C. Martin. DIP emphasizes the importance of relying on abstractions rather than concrete implementations, inverting the traditional dependency flow in a software system.
+
+Key principles of the Dependency Inversion Principle (DIP):
+
+1. **Abstractions Over Implementations:**
+   - High-level modules (abstractions) should not depend on low-level modules (concrete implementations). Instead, both should depend on abstractions.
+   - Abstractions provide a stable and flexible foundation for building systems.
+
+2. **Inversion of Control (IoC):**
+   - DIP promotes the use of Inversion of Control, where the flow of control is inverted compared to traditional procedural programming.
+   - In IoC, higher-level modules delegate responsibilities to lower-level modules through abstractions, allowing for greater flexibility and adaptability.
+
+3. **Stability and Flexibility:**
+   - Abstractions, such as interfaces or abstract classes, remain stable over time. Changes in concrete implementations do not affect the high-level modules that depend on these abstractions.
+   - This stability enhances the maintainability and robustness of the overall system.
+
+4. **Decoupling:**
+   - DIP facilitates loose coupling between different parts of a system, reducing dependencies and allowing components to evolve independently.
+   - Decoupling makes it easier to replace or modify components without affecting the entire system.
+
+5. **Dependency Injection:**
+   - Dependency Injection (DI) is a common technique associated with DIP, where dependencies are injected into a class from the outside rather than being created internally.
+   - DI allows for the dynamic configuration of components, making the system more adaptable and testable.
+
+**Example:**
+
+Consider a scenario where a `LightSwitch` class controls a `LightBulb`. Without adhering to DIP, the `LightSwitch` directly depends on the concrete implementation of the `LightBulb`.
+
+```python
+# Without DIP
+class LightBulb:
+    def turn_on(self):
+        pass
+
+    def turn_off(self):
+        pass
+
+class LightSwitch:
+    def __init__(self, bulb):
+        self.bulb = bulb
+
+    def operate(self):
+        # Direct dependency on LightBulb implementation
+        if self.bulb.is_on():
+            self.bulb.turn_off()
+        else:
+            self.bulb.turn_on()
+```
+
+With DIP, we introduce an abstraction (`SwitchableDevice`) and have both `LightSwitch` and `LightBulb` depend on this abstraction:
+
+```python
+# With DIP
+class SwitchableDevice:
+    def turn_on(self):
+        pass
+
+    def turn_off(self):
+        pass
+
+class LightBulb(SwitchableDevice):
+    def is_on(self):
+        pass
+
+class LightSwitch:
+    def __init__(self, device):
+        self.device = device
+
+    def operate(self):
+        # Dependency on SwitchableDevice abstraction
+        if self.device.is_on():
+            self.device.turn_off()
+        else:
+            self.device.turn_on()
+```
+
+Now, both `LightSwitch` and `LightBulb` depend on the abstraction `SwitchableDevice`, adhering to the Dependency Inversion Principle. This decouples the high-level module (`LightSwitch`) from the low-level module (`LightBulb`), promoting flexibility and maintainability.

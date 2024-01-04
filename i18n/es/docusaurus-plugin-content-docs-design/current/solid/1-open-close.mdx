@@ -1,0 +1,62 @@
+---
+description: Open-Close Principle
+---
+
+# Open-Close
+
+El Principio Abierto/Cerrado (OCP) es uno de los principios SOLID de diseño orientado a objetos, formulado por Bertrand Meyer. OCP sugiere que una clase debería estar abierta para la extensión pero cerrada para la modificación. En otras palabras, el comportamiento de una clase puede ampliarse sin alterar su código fuente.
+
+Principios clave del Principio Abierto/Cerrado (OCP):
+
+1. **Abierto para la Extensión:**
+   - La parte "abierta" de OCP anima a los desarrolladores a diseñar clases de manera que permita la adición de nuevas funcionalidades sin modificar el código existente.
+   - Las extensiones pueden lograrse mediante la herencia, composición u otros medios, garantizando flexibilidad en el software.
+
+2. **Cerrado para la Modificación:**
+   - Una vez que se establece y prueba una clase, su código fuente debería permanecer cerrado para modificaciones.
+   - El objetivo es evitar efectos secundarios no deseados en funcionalidades existentes y mantener la estabilidad.
+
+3. **Encapsulación:**
+   - OCP promueve la encapsulación, haciendo hincapié en la encapsulación del comportamiento dentro de las clases.
+   - Las nuevas funcionalidades deben agregarse mediante la creación de nuevas clases en lugar de modificar las existentes.
+
+4. **Estabilidad del Código:**
+   - Al adherirse a OCP, los desarrolladores contribuyen a la estabilidad del código, reduciendo el riesgo de introducir errores o romper funciones existentes al extender el sistema.
+
+5. **Facilidad de Mantenimiento:**
+   - El aspecto cerrado para la modificación simplifica el mantenimiento, ya que los desarrolladores pueden centrarse en extender funcionalidades en nuevas clases sin revisitar o arriesgarse a cambios en el código existente y bien establecido.
+
+**Ejemplo:**
+
+Considera un sistema que calcula las áreas de diferentes formas. Sin adherirse a OCP, agregar una nueva forma requiere modificar la clase `AreaCalculator` existente. Siguiendo OCP, podemos crear un diseño que permita una fácil extensión sin alterar la clase existente.
+
+```python
+# Sin OCP
+class AreaCalculator:
+    def calculate_area(self, shape):
+        if isinstance(shape, Square):
+            # Calcular área para un cuadrado
+        elif isinstance(shape, Circle):
+            # Calcular área para un círculo
+        # ... (más formas)
+
+# Con OCP
+class AreaCalculator:
+    def calculate_area(self, shape):
+        # Delegar el cálculo a la clase específica de la forma
+        return shape.calculate_area()
+
+class Shape:
+    def calculate_area(self):
+        pass
+
+class Square(Shape):
+    def calculate_area(self):
+        # Calcular área para un cuadrado
+
+class Circle(Shape):
+    def calculate_area(self):
+        # Calcular área para un círculo
+```
+
+En el ejemplo compatible con OCP, cada forma tiene su propia clase y es responsable de calcular su propia área. Esto se adhiere a OCP al permitir la extensión del sistema con nuevas formas sin modificar la clase `AreaCalculator` existente.
