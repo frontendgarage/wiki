@@ -26,7 +26,7 @@ This project and everyone participating in it are governed by the [Code of Condu
 
 ### Reporting Bugs
 
-Before submitting a bug report, check if the issue is already reported in the [issue tracker](link-to-issue-tracker). If it's not yet reported, follow these steps:
+Before submitting a bug report, check if the issue is already reported in the [issue tracker](https://github.com/frontendgarage/wiki/issues). If it's not yet reported, follow these steps:
 
 1. Check if the bug is already fixed in the latest version.
 2. [Open a new issue](https://github.com/frontendgarage/wiki/issues) and provide a detailed description of the bug, including steps to reproduce.
@@ -45,7 +45,7 @@ If you want to contribute code:
 
 1. Fork the repository and create a new branch for your feature or bug fix.
 2. Follow the [Development Setup](#development-setup) guidelines.
-3. Commit your changes following the [commit message conventions](link-to-contribution-guidelines).
+3. Commit your changes following the [commit message conventions](https://www.conventionalcommits.org/en/v1.0.0/#summary).
 4. Push your changes to your fork and submit a pull request.
 
 ## Development Setup
